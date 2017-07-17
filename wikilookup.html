@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="wikilookup">
+<head>
+    <meta charset="UTF-8">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/wikilookup.css">
+    <Title>Wikiviewer</Title>
+</head>
+<body>
+
+<div ng-controller="WikiController as wikiCntrl">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Random wiki Article</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <table st-table="rowCollection" class="table table-striped">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <button type="button" class="btn btn-primary" ng-model="singleModel" ng-click="wikiCntrl.getRandomArticle()">
+                                Random article
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-animate.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-sanitize.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-smart-table/2.1.8/smart-table.min.js"></script>
+<script src="js/wikilookup.js"></script>
+</html>
