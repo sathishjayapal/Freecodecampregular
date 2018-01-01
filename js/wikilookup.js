@@ -8,8 +8,12 @@ angular.module('wikilookup').config(function ($qProvider) {
 });
 angular.module('wikilookup').controller('WikiController', function ($uibModal, $log, $document, $http, $sce) {
     var wikiCntrl = this;
-    wikiCntrl.name = "Sathish";
-    wikiCntrl.apiURL = 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=Einstien';
+    wikiCntrl.name = "Trump";
+    wikiCntrl.apiURL = 'https://en.wikipedia.org/w/api.php' +
+        '?format=json&action=query&generator=search' +
+        '&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&' +
+        'pilimit=max&exintro&explaintext&exsentences=1' +
+        '&exlimit=max&gsrsearch=Einstien';
     wikiCntrl.cb = '&callback=JSON_CALLBACK'
     wikiCntrl.url = wikiCntrl.apiURL + wikiCntrl.cb;
     wikiCntrl.req = {

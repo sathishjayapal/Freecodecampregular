@@ -15,30 +15,36 @@
         <div class="panel-heading">Twitch Channels</div>
         <div class="panel-body">
             <uib-tabset active="active">
-                <uib-tab index="$index + 1" ng-repeat="tab in twitchCntrl.tabs" heading="{{tab.title}}" select="twitchCntrl.alertMe(tab.title)">
-                    <table st-table="rowCollection" class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Stream details</th>
-                            <th>Links</th>
-                            <th>data</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>{{twitchCntrl.response.stream}}</td>
-                            <td>{{twitchCntrl.response._links.self}}</td>
-                            <td>{{twitchCntrl.response}}</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <uib-tab index="$index + 1" ng-repeat="tab in twitchCntrl.tabs" heading="{{tab.title}}"
+                         select="twitchCntrl.alertMe(tab.title)">
+                    <div class="nav-center">
+                        <table st-table="rowCollection" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th st-ratio="10">Display Name</th>
+                                <th st-ratio="10">Logo</th>
+                                <th st-ratio="30">Bio</th>
+                                <th st-ratio="10">Status</th>
+                                <th st-ratio="20">Link</th>
+                                <!--<th st-ratio="20" >data</th>-->
 
+                            </thead>
+                            <tbody>
 
-
-
+                            <td st-ratio="10">{{twitchCntrl.response.display_name}}</td>
+                            <td st-ratio="10"><img ng-src="{{twitchCntrl.response.logo}}" border=\"0\" width=\"5\">"
+                            </td>
+                            <td st-ratio="30">{{twitchCntrl.response.bio}}</td>
+                            <td st-ratio="20">{{twitchCntrl.response.stream}}</td>
+                            <td st-ratio="20">{{twitchCntrl.response.link}}</td>
+                            <!--<td st-ratio="20">{{twitchCntrl.response}}</td>-->
+                            </tr>
+                            </tbody>
+                        </table>
                 </uib-tab>
             </uib-tabset>
         </div>
+
     </div>
 </div>
 </body>
