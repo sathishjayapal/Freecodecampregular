@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="pomodoroApp">
+
+<head>
+  <meta charset="UTF-8">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+
+
+  <title>Sathish pomodoro</title>
+</head>
+
+<body>
+<div ng-controller="pomodoroCntrlr as pmctrl">
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-3 sidenav ">
+        <h3>Pomodoro Timer</h3>
+        <br class="nav nav-pills nav-stacked">
+        </br>
+        <li>
+          <button type="button" class="btn btn-primary" ng-click="pmctrl.startTimer()">Start
+          </button>
+        </li>
+
+        </br>
+
+        <li>
+          <button type="button" class="btn btn-warn" ng-click="pmctrl.pauseTimer()">Pause</button>
+        </li>
+        </br>
+        <li>
+          <button type="button" class="btn btn-primary" ng-click="pmctrl.increaseBreak()">Increase
+            Break length
+          </button>
+          <h4>
+            {{pmctrl.breakLength | date : 'mm:ss'}}
+          </h4>
+        </li>
+        </br>
+        <li>
+          <button type="button" class="btn btn-primary" ng-click="pmctrl.increaseDuration()">
+            Increase Session length
+          </button>
+        </li>
+        </ul>
+      </div>
+      <div class="col-sm-9 mainbody text-center">
+        <div class="wrapper">
+          <div class="box">
+            <div class="container">
+              <h1>Pomodoro</h1>
+              <p>
+              <h2>
+                {{pmctrl.twentyMinutesLater | date: 'hh:mm'}}
+                </br>
+                <timer end-time=pmctrl.twentyMinutesLater>{{minutes}}:{{seconds}}</timer>
+              </h2>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-animate.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-sanitize.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-timer/1.3.5/angular-timer.min.js"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/humanize-duration/3.14.0/humanize-duration.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+<script src="js/pomodoro.js"></script>
+</html>
